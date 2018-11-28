@@ -1,5 +1,5 @@
 
-local Constants = require("../constants")
+local constants = require("../constants")
 
 local SCHEDULE_COMMANDS = {"!schedule", "!streams"}
 
@@ -14,7 +14,7 @@ local function isScheduleCommand(rawMessage)
   return false
 end
 
-local function ProcessMessage(msgObj)
+local function processMessage(msgObj)
   local rawMessage = msgObj.content
   local channel = msgObj.channel
   local scheduleInfo = [[Most Tuesdays and Thursdays usually from around 8:15 to 16:15 CEST (UTC+2).]]
@@ -25,6 +25,6 @@ local function ProcessMessage(msgObj)
 end
 
 return {
-  [Constants.KEY_PROCESSOR_TYPE] = Constants.ProcessorTypes.CREATED_MESSAGE_PROCESSOR,
-  [Constants.KEY_PROCESSOR_FUNCTION] = ProcessMessage
+  [constants.KEY_PROCESSOR_TYPE] = constants.ProcessorTypes.CREATED_MESSAGE_PROCESSOR,
+  [constants.KEY_PROCESSOR_FUNCTION] = processMessage
 }

@@ -1,7 +1,7 @@
 
 
 
-local moduleCommandProcessor = require("./command/CommandProcessor")
+local moduleCommandProcessor = require("./command/Processor")
 local CommandProcessor = moduleCommandProcessor.new()
 
 
@@ -13,12 +13,12 @@ end
 
 
 function module:client_messageCreate(messageObj)
-  CommandProcessor:ProcessCreatedMessage(messageObj)
+  CommandProcessor:processCreatedMessage(messageObj)
 end
 
 
 function module:client_messageUpdated(messageObj)
-  CommandProcessor:ProcessUpdatedMessage(messageObj)
+  CommandProcessor:processUpdatedMessage(messageObj)
 end
 
 

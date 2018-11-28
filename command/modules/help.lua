@@ -1,6 +1,6 @@
 
 
-local Constants = require("../constants")
+local constants = require("../constants")
 
 local HELP_COMMANDS = {"!commands", "!help"}
 
@@ -17,7 +17,7 @@ local function isHelpCommand(rawMessage)
 end
 
 
-local function ProcessMessage(msgObj)
+local function processMessage(msgObj)
   local rawMessage = msgObj.content
   local channel = msgObj.channel
   local server_owner = msgObj.guild.owner.name
@@ -32,6 +32,6 @@ end
 
 
 return {
-  [Constants.KEY_PROCESSOR_TYPE] = Constants.ProcessorTypes.CREATED_MESSAGE_PROCESSOR,
-  [Constants.KEY_PROCESSOR_FUNCTION] = ProcessMessage
+  [constants.KEY_PROCESSOR_TYPE] = constants.ProcessorTypes.CREATED_MESSAGE_PROCESSOR,
+  [constants.KEY_PROCESSOR_FUNCTION] = processMessage
 }

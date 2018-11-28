@@ -1,7 +1,7 @@
 
-local Constants = require("../constants")
+local constants = require("../constants")
 
-local function ProcessMessage(msgObj)
+local function processMessage(msgObj)
   local msg = msgObj.content
   local channel = msgObj.channel
   local server_owner = msgObj.guild.owner.name
@@ -12,6 +12,6 @@ local function ProcessMessage(msgObj)
 end
 
 return {
-  [Constants.KEY_PROCESSOR_TYPE] = Constants.ProcessorTypes.CREATED_MESSAGE_PROCESSOR,
-  [Constants.KEY_PROCESSOR_FUNCTION] = ProcessMessage
+  [constants.KEY_PROCESSOR_TYPE] = constants.ProcessorTypes.CREATED_MESSAGE_PROCESSOR,
+  [constants.KEY_PROCESSOR_FUNCTION] = processMessage
 }
