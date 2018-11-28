@@ -1,7 +1,7 @@
 
-local Constants = require("../Constants")
+local Constants = require("../constants")
 
-local SCHEDULE_COMMANDS = {"!schedule", "streams"}
+local SCHEDULE_COMMANDS = {"!schedule", "!streams"}
 
 local function isScheduleCommand(rawMessage)
   for i = 1, #SCHEDULE_COMMANDS do

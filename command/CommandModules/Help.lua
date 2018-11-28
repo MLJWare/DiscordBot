@@ -1,6 +1,6 @@
 
 
-local Constants = require("../Constants")
+local Constants = require("../constants")
 
 local HELP_COMMANDS = {"!commands", "!help"}
 

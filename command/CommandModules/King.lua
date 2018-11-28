@@ -1,5 +1,5 @@
 
-local Constants = require("../Constants")
+local Constants = require("../constants")
 
 local function ProcessMessage(msgObj)
   local msg = msgObj.content

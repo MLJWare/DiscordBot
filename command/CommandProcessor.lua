@@ -1,7 +1,7 @@
 
 local filesystem = require("fs")
 
-local Constants = require("./Constants")
+local Constants = require("./constants")
 
 local module = {}
 
@@ -10,7 +10,7 @@ methods.__index = methods
 
 
 function methods:LoadCommandProcessors()
-  for file, filetype in filesystem.scandirSync("./command/CommandModules") do
+  for file, filetype in filesystem.scandirSync("./command/commandModules") do
     if filetype == "file" then
       local full_filename  = file
       local file_extension = full_filename:match('%.[^.]+$')
@@ -20,7 +20,7 @@ function methods:LoadCommandProcessors()
       if isLuaFile then
         local module_name = full_filename:match('^(.-)%.[^.]+$')
         --print("moduleName:"..module_name)
-        local commandProcessor = require("./command/CommandModules/".. module_name)
+        local commandProcessor = require("./command/commandModules/".. module_name)
         local processorType = commandProcessor[Constants.KEY_PROCESSOR_TYPE]
         local processorFunction = commandProcessor[Constants.KEY_PROCESSOR_FUNCTION]
 
